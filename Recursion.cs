@@ -8,14 +8,19 @@ namespace Recursion
 {
     class Recursion
     {
-        static void Foo()
+        static void Foo(int i)
         {
-            Console.WriteLine("Foo");
-            Foo();
+            Console.WriteLine(i);
+            if (i >=4)
+            {
+                return;
+            }
+            ++i;
+            Foo(i);
         }
         static void Main(string[] args)
         {
-            Foo();
+            Foo(0);
         }
     }
 }
