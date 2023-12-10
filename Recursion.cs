@@ -2,6 +2,8 @@
 {
     public class Recursion
     {
+        public static object Child { get; private set; }
+
         static void Foo(int i)
         {
             Console.WriteLine(i);
@@ -26,12 +28,18 @@
         {
             return new Item()
             {
-                Value = 5,
+                Value = 25,
+
                 Child = new Item()
                 {
-                    Value = 2,
+                    Value = 5,
+                    Child = new Item()
+                    {
+                        Value = 2,
+                    }
                 }
             };
+           
         }
 
         public static void Print(Item item)
