@@ -1,6 +1,6 @@
 ﻿namespace Recursion
 {
-    class Recursion
+    public class Recursion
     {
         static void Foo(int i)
         {
@@ -12,17 +12,17 @@
             ++i;
             Foo(i);
         }
-       
 
 
 
-        class Item
+
+        public class Item
         {
             public int Value { get; set; }
             public Item Child { get; set; }
         }
 
-        static Item InitIten()
+        public static Item InitIten()
         {
             return new Item()
             {
@@ -34,7 +34,7 @@
             };
         }
 
-        static void Print(Item item)
+        public static void Print(Item item)
         {
             if (item!=null)
             {
