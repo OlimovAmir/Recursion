@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Recursion
+﻿namespace Recursion
 {
     class Recursion
     {
@@ -18,9 +12,38 @@ namespace Recursion
             ++i;
             Foo(i);
         }
-        static void Main(string[] args)
+       
+
+
+
+        class Item
         {
-            Foo(0);
+            public int Value { get; set; }
+            public Item Child { get; set; }
         }
+
+        static Item InitIten()
+        {
+            return new Item()
+            {
+                Value = 5,
+                Child = new Item()
+                {
+                    Value = 2,
+                }
+            };
+        }
+
+        static void Print(Item item)
+        {
+            if (item!=null)
+            {
+                Console.WriteLine(item.Value);
+                Print(item.Child);
+            }
+            
+        }
+
+       
     }
 }
